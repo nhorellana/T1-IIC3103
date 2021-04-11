@@ -42,10 +42,13 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function Rol() {
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading1, setLoading1] = useState(true);
+    const [isLoading2, setLoading2] = useState(true);
     const classes = useStyles();
     let { name } = useParams();
     const [character_info, setCharacter] = useState({});
+    const [quotes, setQuotes] = useState([]);
+    const [is_quote, setIstherequote] = useState(false);
 
     useEffect(() => {
         axios.get(`https://tarea-1-breaking-bad.herokuapp.com/api/characters?name=${name}`)
@@ -53,14 +56,28 @@ function Rol() {
                     console.log(name)
                     console.log(response.data[0]);
                     setCharacter(response.data[0]);
-                    setLoading(false);
                 })
                 .catch((error) => {
                     console.log('error' + error);
                 })
+        setLoading1(false);
         }, []);
 
-    if (isLoading) {
+    useEffect(() => {
+        axios.get(`https://tarea-1-breaking-bad.herokuapp.com/api/quote?author=${name}`)
+                .then(response => {
+                    console.log(response.data[0]);
+                    setQuotes(response.data)
+                    setIstherequote(true);
+                })
+                .catch((error) => {
+                    console.log("Hubo un error");
+                    console.log('error' + error);
+                })
+        setLoading2(false);
+        }, []);
+
+    if (isLoading1 || isLoading2) {
         return <div className="App">Loading...</div>;
         }
 
@@ -170,6 +187,37 @@ function Rol() {
                                                 </Typography>
                                                 }
                                                 />
+                                        </ListItem>
+                                        <ListItem >
+                                            <ListItemText
+                                                disableTypography
+                                                primary={
+                                                <Typography variant="body2">
+                                                    Frases:
+                                                </Typography>
+                                                }
+                                                />
+                                                {is_quote ? (
+                                                        <List>
+                                                            <li>
+                                                            <ul>
+                                                            {quotes.map((quote) => (
+                                                            <ListItem >
+                                                                <ListItemText
+                                                                disableTypography
+                                                                primary={
+                                                                <Typography variant="body2">
+                                                                    {quote.quote}
+                                                                </Typography>
+                                                                }
+                                                                />
+                                                            </ListItem> ))}
+                                                            </ul>
+                                                            </li>
+                                                        </List>
+                                                    ) : (
+                                                        "Ninguna"
+                                                    )}
                                         </ListItem>
                                     </ul>
                                     </li>

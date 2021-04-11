@@ -81,7 +81,7 @@ function Episode() {
                                                 disableTypography
                                                 primary={
                                                 <Typography variant="body2">
-                                                    ID: {episode_info.title}
+                                                    ID: {episode_info.episode_id}
                                                 </Typography>
                                                 }
                                                 />
