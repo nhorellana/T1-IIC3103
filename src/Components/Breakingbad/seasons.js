@@ -93,30 +93,13 @@ function Bad_Seasons() {
                 >
                 {seasons.map((post, index) => (
                     <Grid item xs={4}>
-                    <Typography color="textPrimary" align="left">
-                    Temporada: {index + 1}
-                    </Typography>
                     <Card className={classes.root}>
                         <CardContent>
-                        <List className={classes.root} subheader={<li />}>
-                                <li>
-                                <ul className={classes.ul}>
-                                    {post.map((item) => (
-                                    <ListItem key={item.episode_id.toString()}>
-                                        <ListItemText
-                                        disableTypography
-                                        primary={
-                                        <Typography variant="body2">
-                                            <Link color="inherit" href={`/episode/${item.episode_id}`}>
-                                            Episodio {item.episode}: {item.title}
-                                            </Link>
-                                        </Typography>
-                                        }
-                                        />
-                                    </ListItem> ))}
-                                </ul>
-                                </li>
-                            </List>
+                        <Typography color="textPrimary" align="left">
+                          <Link href={`/season_bad/${index + 1}`} color="inherit">
+                          Temporada: {index + 1}
+                          </Link>
+                        </Typography>
                         </CardContent>
                     </Card>
                     </Grid>

@@ -10,6 +10,8 @@ import Bad_Seasons from './Components/Breakingbad/seasons';
 import Saul_Seasons from './Components/Bettercallsaul/seasons';
 import Episode from './Components/Breakingbad/episodes';
 import Rol from './Components/Characters/rol'
+import Specific_season_bad from './Components/Seasons/specific_season_bad'
+import Specific_season_saul from './Components/Seasons/specific_season_saul'
 
 ReactDOM.render(
   <ThemeProvider>
@@ -22,6 +24,8 @@ ReactDOM.render(
         <Route path = "/saul_seasons" exact component = { Saul_Seasons} />
         <Route path = "/episode/:id" exact component = { Episode} /> 
         <Route path = "/character/:name" exact component = { Rol} /> 
+        <Route path = "/season_bad/:id" exact component = { Specific_season_bad} /> 
+        <Route path = "/season_saul/:id" exact component = { Specific_season_saul} /> 
       </div> 
     </BrowserRouter>
   </ThemeProvider>,

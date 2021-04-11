@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Saul_Seasons() {
+function Bad_Seasons() {
     const [isLoading, setLoading] = useState(true);
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
@@ -93,30 +93,13 @@ function Saul_Seasons() {
                 >
                 {seasons.map((post, index) => (
                     <Grid item xs={4}>
-                    <Typography color="textPrimary" align="left">
-                    Temporada: {index + 1}
-                    </Typography>
                     <Card className={classes.root}>
                         <CardContent>
-                        <List className={classes.root} subheader={<li />}>
-                                <li>
-                                <ul className={classes.ul}>
-                                    {post.map((item) => (
-                                    <ListItem key={item.episode_id.toString()}>
-                                        <ListItemText
-                                        disableTypography
-                                        primary={
-                                        <Typography variant="body2">
-                                            <Link color="inherit" href={`/episode/${item.episode_id}`}>
-                                            Episodio {item.episode}: {item.title}
-                                            </Link>
-                                        </Typography>
-                                        }
-                                        />
-                                    </ListItem> ))}
-                                </ul>
-                                </li>
-                            </List>
+                        <Typography color="textPrimary" align="left">
+                          <Link href={`/season_saul/${index + 1}`} color="inherit">
+                          Temporada: {index + 1}
+                          </Link>
+                        </Typography>
                         </CardContent>
                     </Card>
                     </Grid>
@@ -126,4 +109,4 @@ function Saul_Seasons() {
         </React.Fragment>
     );
   }
-  export default Saul_Seasons;
+  export default Bad_Seasons;

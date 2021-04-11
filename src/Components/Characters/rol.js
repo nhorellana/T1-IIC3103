@@ -168,12 +168,32 @@ function Rol() {
                                                 primary={
                                                 <Typography variant="body2">
                                                     Temporadas en las que aparece (Breaking bad):
-                                                    <Link color="inherit" href='/bad_seasons'>
-                                                    {"  "+character_info.appearance}
-                                                    </Link>
                                                 </Typography>
                                                 }
                                                 />
+                                                {character_info.appearance ? (
+                                                        <List>
+                                                            <li>
+                                                            <ul>
+                                                            {character_info.appearance.map((episode) => (
+                                                            <ListItem >
+                                                                <ListItemText
+                                                                disableTypography
+                                                                primary={
+                                                                <Typography variant="body2">
+                                                                    <Link href={`/season_bad/${episode}`} color='inherit'>
+                                                                    {episode}
+                                                                    </Link>
+                                                                </Typography>
+                                                                }
+                                                                />
+                                                            </ListItem> ))}
+                                                            </ul>
+                                                            </li>
+                                                        </List>
+                                                    ) : (
+                                                        "Ninguna"
+                                                    )}
                                         </ListItem>
                                         <ListItem >
                                             <ListItemText
@@ -181,12 +201,32 @@ function Rol() {
                                                 primary={
                                                 <Typography variant="body2">
                                                     Temporadas en las que aparece (Better call Saul):
-                                                    <Link color="inherit" href='/saul_seasons'>
-                                                    {"  "+character_info.better_call_saul_appearance}
-                                                    </Link>
                                                 </Typography>
                                                 }
                                                 />
+                                                {character_info.better_call_saul_appearance ? (
+                                                        <List>
+                                                            <li>
+                                                            <ul>
+                                                            {character_info.better_call_saul_appearance.map((episode) => (
+                                                            <ListItem >
+                                                                <ListItemText
+                                                                disableTypography
+                                                                primary={
+                                                                <Typography variant="body2">
+                                                                    <Link href={`/season_saul/${episode}`} color='inherit'>
+                                                                    {episode}
+                                                                    </Link>
+                                                                </Typography>
+                                                                }
+                                                                />
+                                                            </ListItem> ))}
+                                                            </ul>
+                                                            </li>
+                                                        </List>
+                                                    ) : (
+                                                        "Ninguna"
+                                                    )}
                                         </ListItem>
                                         <ListItem >
                                             <ListItemText
