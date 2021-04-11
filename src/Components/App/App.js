@@ -62,7 +62,7 @@ const featuredPosts = [
     title: 'Breaking bad',
     date: 'Nov 12',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
     link: '/bad_seasons',
     img_link: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/cover_215x270/public/media/image/2018/07/breaking-bad-cover.jpg?itok=y-orArzT'
   },
@@ -70,7 +70,7 @@ const featuredPosts = [
     title: 'Better call Saul',
     date: 'Nov 11',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'The trials and tribulations of criminal lawyer Jimmy McGill in the time before he established his strip-mall law office in Albuquerque, New Mexico.',
     link: '/saul_seasons',
     img_link: 'https://caracoltv.brightspotcdn.com/dims4/default/ea7bdb9/2147483647/strip/true/crop/1344x1984+0+0/resize/1200x1771!/format/webp/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2Fac%2Ffd%2Faac8fe55440daf5fa242d6470ffc%2Fbetter-call-saul-cartel-netflix-final-serie.jpg'
   }
@@ -102,16 +102,11 @@ function App() {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title of a longer featured blog post
+                    Tarea 1 de Taller de Integración
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers
-                    quickly and efficiently about what&apos;s most interesting in this
-                    post&apos;s contents.
+                    En esta tarea se deberá seleccionar una de las dos series a continuación para acceder a sus temporadas e información correspondiente.
                   </Typography>
-                  <Link variant="subtitle1" href="#">
-                    Continue reading…
-                  </Link>
                 </div>
               </Grid>
             </Grid>

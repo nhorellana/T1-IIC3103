@@ -70,7 +70,7 @@ function Rol() {
         <Box p={10}>
             <Grid
                 container
-                spacing={6}
+                spacing={2}
                 direction='row'
                 justify="left"
                 xs={12}
@@ -151,7 +151,9 @@ function Rol() {
                                                 primary={
                                                 <Typography variant="body2">
                                                     Temporadas en las que aparece (Breaking bad):
+                                                    <Link color="inherit" href='/bad_seasons'>
                                                     {"  "+character_info.appearance}
+                                                    </Link>
                                                 </Typography>
                                                 }
                                                 />
@@ -162,7 +164,9 @@ function Rol() {
                                                 primary={
                                                 <Typography variant="body2">
                                                     Temporadas en las que aparece (Better call Saul):
+                                                    <Link color="inherit" href='/saul_seasons'>
                                                     {"  "+character_info.better_call_saul_appearance}
+                                                    </Link>
                                                 </Typography>
                                                 }
                                                 />
